@@ -50,6 +50,15 @@ app.get('/weather', (req, res)=>{
     res.send('Hello Express weather')
 })
 
+app.get('/products', (req, res)=>{
+    console.log(req.query);
+    res.send(
+        {produts : []
+
+        }
+    )
+})
+
 app.get('*', (req,res)=>{
     res.send('My 404 page')
 })
