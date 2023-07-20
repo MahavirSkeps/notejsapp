@@ -1,0 +1,77 @@
+ // db.collection('users').insertOne({
+    //     _id : id,
+    //     name: 'Mahavir goyal',
+    //     age : 24,
+           
+    // })
+
+    // else{
+    //     console.log('Connected Correctly');
+    // }
+//    db.collection('users').insertMany([
+//     {
+//         name: 'gen',
+//         age :27
+//     },
+//     {
+//         name: 'genhhhj',
+//         age :28
+//     },
+//    ], )
+
+
+// const id = new ObjectId()
+
+// console.log(id.toHexString().length);
+// // console.log(id.getTimestamp());
+
+
+//update
+
+db.collection('users').updateOne({
+    _id: new ObjectId("64b8e8f31e5ea1f524733d53")
+  }, {
+    $set : {
+        name: 'Mike2'
+    }
+  }).then((res)=>{
+    console.log(res);
+
+  }).catch((err)=>{
+    console.log(res);
+
+  })
+  
+   db.collection('users').updateOne({
+    _id: new ObjectId("64b8e8f31e5ea1f524733d53")
+  }, {
+    $inc : {
+        age: -10
+    }
+  }).then((res)=>{
+    console.log(res);
+
+  }).catch((err)=>{
+    console.log(res);
+
+  })
+  
+
+  //update
+  db.collection('users').updateMany({name: 'Mahavir'}, 
+{
+    $set : {
+        name: 'SkepiBoy'
+    }
+  }).then((res)=>{
+    console.log(res.modifiedCount);
+
+  }).catch((err)=>{
+    console.log(res);
+
+  })
+  
+   
+
+
+
